@@ -134,6 +134,15 @@ p {
   background-color: var(--color-green);
 }
 
+.navbar__toggle-btn {
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  /* not to click this, so that using display:none instead of opacity */
+  display: none;
+}
+
 /* Home */
 
 #home {
@@ -378,4 +387,37 @@ p {
   transform: scale(1.2);
   color: var(--color-orange);
   transition: all var(--animation-duration) linear;
+}
+
+/* Media Query: for below 768px (screen size: width) */
+@media screen and (max-width: 767px) {
+  .navbar__toggle-btn {
+    display: block;
+  }
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .about__majors {
+    flex-direction: column;
+    align-items: center;
+  }
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
 }
