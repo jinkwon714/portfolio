@@ -19,17 +19,18 @@ navbarMenu.addEventListener("click", (event) => {
   if (link == null) {
     return;
   } else {
-    console.log(event.target.dataset.link);
   }
-  const scrollTo = document.querySelector(link);
-  scrollTo.scrollIntoView({ behavior: "smooth" });
+  scrollIntoView(link);
 });
 
 // Handling click on "Contact Me"
 const homeContactMeBtn = document.querySelector(".home__contact");
 homeContactMeBtn.addEventListener("click", (event) => {
-  const scrollTo = document.querySelector("#contact");
-  scrollTo.scrollIntoView({ behavior: "smooth" });
+  scrollIntoView("#contact");
 });
 
 // Need to wrap it by using a function
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: "smooth" });
+}
