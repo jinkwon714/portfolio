@@ -34,3 +34,21 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: "smooth" });
 }
+
+// show "arrowUp" btn when scrolling
+
+const arrowUp = document.querySelector(".arrowUp");
+const heightRef = document.querySelector(".navbar__menu");
+const homeHeight = heightRef.getBoundingClientRect().height;
+document.addEventListener("scroll", () => {
+  if (window.scrollY > homeHeight / 2) {
+    arrowUp.classList.add("visible");
+  } else {
+    arrowUp.classList.remove("visible");
+  }
+});
+
+// Handling arrowUp btn
+arrowUp.addEventListener("click", () => {
+  scrollIntoView("#home");
+});
