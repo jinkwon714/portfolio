@@ -18,9 +18,15 @@ navbarMenu.addEventListener("click", (event) => {
   const link = target.dataset.link;
   if (link == null) {
     return;
-  } else {
   }
+  navbarMenu.classList.remove("open");
   scrollIntoView(link);
+});
+
+// Navbar toggling
+const navbarToggleBtn = document.querySelector(".navbar__toggle-btn");
+navbarToggleBtn.addEventListener("click", () => {
+  navbarMenu.classList.toggle("open");
 });
 
 // Handling click on "Contact Me"
