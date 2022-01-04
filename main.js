@@ -31,3 +31,5 @@ homeContactMeBtn.addEventListener("click", (event) => {
   const scrollTo = document.querySelector("#contact");
   scrollTo.scrollIntoView({ behavior: "smooth" });
 });
+
+// Need to wrap it by using a function
